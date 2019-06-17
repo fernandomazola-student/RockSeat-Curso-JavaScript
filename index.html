@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="PT-BR">
+    <head>
+        <title></title>
+    </head>
+    <body>
+        <button id="botao">Criar</button>
+
+        <div style="width: 100px; height: 100px;" id="novo"></div>
+        
+
+        <script>
+
+        var endereco = {
+            rua: "Rua",
+            numero: 9999,
+            bairro: "Vila",
+            cidade:"São Paulo",
+            uf:"SP"
+        }
+        
+        function retornaObjeto(endereco){
+            return "O usuário mora em " + endereco.cidade + " / " + endereco.uf + " no bairro " + endereco.bairro + " na " + endereco.rua;
+        }
+        
+
+        var resultado = retornaObjeto(endereco);
+        console.log(resultado);
+
+// ---------------------------------------------------------------------------
+7
+
+
+        function parouImpar (x){
+            var resultado;
+            if((resultado = x % 2) == 0){
+                return "par";
+            }else{
+                return "impar";
+            }
+        }
+
+
+        var resultado1 = parouImpar(9);
+        console.log(resultado1);
+
+
+// ---------------------------------------------------------------------------
+
+
+        function qualeoPar (x, y){
+            while(x <= y){
+                var res = 0;
+                if((res = x % 2) == 0){
+                    console.log(x);
+                }
+                x++
+            }
+        }
+
+        var resultado2 = qualeoPar(1, 351);
+        console.log(resultado2);
+
+
+// ---------------------------------------------------------------------------
+
+
+        function temHabilidade(skills){
+            var sup = skills.indexOf("Javascript");
+            if(skills[sup] == "Javascript"){
+                return true;
+            }else{
+                return false;
+            }
+        }
+
+        var skills = ["Javascript", "ReactJS", "React Native"];
+        var resultado3 = temHabilidade(skills);
+        console.log(resultado3);
+
+// ---------------------------------------------------------------------------
+
+        function experiencia(anos){
+            if(anos <= 1){
+                return "Iniciante"
+            }else if (anos >= 2 && anos <= 3){
+                return "Intermediário";
+            }else if(anos >= 4 && anos <= 6){
+                return "Avançado";
+            }else{
+                return "Jedi Master";
+            }
+        }
+
+        var resultado4 = experiencia(4);
+        console.log(resultado4);
+
+
+
+// ---------------------------------------------------------------------------
+
+        var usuarios = [
+            {
+                nome: "Diego",
+                habilidades: ["Javascript", "ReactJS", "Redux"]
+            },
+            {
+                nome: "Gabriel",
+                habilidades: ["VueJS", "Ruby on Rails", "Elixir"]
+            }
+        ];
+
+
+        function habilidadesUsers(usuarios){
+            for(var x = 0; x < usuarios.length; x++){
+                console.log(usuarios[x].nome + " possui as habilidades: " + usuarios[x].habilidades);
+            }
+        }
+     
+        habilidadesUsers(usuarios);
+
+
+
+// ---------------------------------------------------------------------------
+
+
+        var botaoElemento = document.querySelector("button#botao");
+
+
+        botaoElemento.onclick = function(){
+            var criandoElemento = document.createElement("div");
+            
+            criandoElemento.style.backgroundColor = "red";
+            criandoElemento.style.width = "100px";
+            criandoElemento.style.height = "100px";
+
+            var bodyElement = document.querySelector("body");
+            bodyElement.appendChild(criandoElemento);
+        }
+
+
+        function getRandomColor() {
+            var letters = "0123456789ABCDEF";
+            var color = "#";
+                for (var i = 0; i < 6; i++) {
+                color += letters[Math.floor(Math.random() * 16)];
+                }
+                return color;
+                }
+            var newColor = getRandomColor(); // #E943F0
+            
+
+        </script>
+
+     
+
+    </body>
+</html>
